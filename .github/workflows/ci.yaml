@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build:
-    name: Build nginx image
+    name: Build unfs3 image
     runs-on: ubuntu-latest
 
     # https://docs.github.com/en/actions/reference/authentication-in-a-workflow
