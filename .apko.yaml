@@ -1,0 +1,21 @@
+contents:
+  repositories:
+    - https://dl-cdn.alpinelinux.org/alpine/latest-stable/main
+  packages:
+    - alpine-baselayout-data
+    - unfs3
+    - rpcbind
+
+entrypoint:
+  type: service-bundle
+  services:
+    rpcbind: /sbin/rpcbind -f
+    unfsd: /usr/sbin/unfsd -d
+
+accounts:
+  groups:
+    - groupname: unfs3
+      gid: 10000
+  users:
+    - username: unfs3
+      uid: 10000
